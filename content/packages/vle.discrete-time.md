@@ -205,11 +205,14 @@ be dynamically set by an external event on port *dyn_init* with a map):
    Used only if *dyn_allow* is equal to true and *dyn_type* == _Vect_.
 * **dyn_denys** (set of strings, default empty): port names into this set are
   not added as state variables, even if dynamic managment is allowed.
-* **dyn_allow_X** (bool, default true): if *sync_X* is true, if the port
+* **dyn_allow_X** (bool, default true): if *dyn_allow_X* is true, if the port
   named X exist, a variable of the name X can be added dynamically.
-  If *sync_X* is false, the port named X is not considered for dynamic
+  If *dyn_allow_X* is false, the port named X is not considered for dynamic
   managment of variables. This option has priority on *dyn_denys*.
-
+* **dyn_sync_out** (bool, default true): if *dyn_sync_out* is true, state
+  variables dynamically added according to output ports can be synchronized.
+  If *dyn_sync_out* is false, state variables dynamically added according
+  to output ports won't be synchronized.
 
 Advanced settings for synchronisation:
 
